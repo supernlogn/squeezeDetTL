@@ -1,0 +1,3 @@
+#!/usr/bin/python
+python ../../src/datasets/creation/create_pascal_tf_record.py --set=train --data_dir=/media/terabyte/projects/datasets/pascal-voc/ --output_path=/media/terabyte/projects/datasets/pascal-voc/pascal_train.record
+python ../../src/datasets/creation/create_pascal_tf_record.py --set=val --data_dir=/media/terabyte/projects/datasets/pascal-voc/ --output_path=/media/terabyte/projects/datasets/pascal-voc/pascal_train.record

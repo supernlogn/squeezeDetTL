@@ -1,0 +1,11 @@
+*.pyc
+*.zsh
+data/*
+data/model_checkpoints
+timeline.ctf*0.json
+activate_server_script.zsh
+COCO/*
+scripts/bipartite_tests/kitti_tests_new/*
+scripts/bipartite_tests/kitti_greedy_bipartite/*
+scripts/compare_pascal_voc_trainings/Pascal_train_cmp1/*
+scripts/compare_pascal_voc_trainings/Pascal_train_cmp2/*
