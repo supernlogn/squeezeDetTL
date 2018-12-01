@@ -22,10 +22,16 @@ Summing all them in a list, this repository has to offer these in addition to th
 The initial SqueezeDet training is only benchmarked in the KITTI dataset, in this repo there examples of using SqueezeDet for PASCAL VOC subsets. There were efforts to train the SqueezeDet in the whole PASCAL VOC dataset but they were all failures, as others have also tried, the PASCAL VOC dataset has objects with many diverse features and a few examples to support them, so the SqueezeDet cannot handle this diversity as it has very few parameters. That is at least the author's point of view...
 
 
-For more information about the experiments and to know more about the use of this framework in Transfer Learning from KITTI to PASCAL VOC subsets, or even what makes it `1.8 x` faster there is a link to [this academic work]() which answers all these questions. If you are using it in any publications, please consider citting
+For more information about the experiments and to know more about the use of this framework in Transfer Learning from KITTI to PASCAL VOC subsets, or even what makes it `1.8 x` faster there is a link to [this preprint academic work](https://arxiv.org/abs/1811.04863v1) which answers all these questions. If you are using it in any publications, please consider citting
 it as below:
+
 ```
-    ArXiv link
+@article{athanasiadis2018framework,
+  title={A Framework of Transfer Learning in Object Detection for Embedded Systems},
+  author={Athanasiadis, Ioannis and Mousouliotis, Panagiotis and Petrou, Loukas},
+  journal={arXiv preprint arXiv:1811.04863},
+  year={2018}
+}
 ```
 
 ## Fully GPU SqueezeDet Implementation
