@@ -1,5 +1,7 @@
 *.pyc
 *.zsh
+*.zip
+*.GPGPU
 data/*
 data/model_checkpoints
 timeline.ctf*0.json
