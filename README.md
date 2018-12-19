@@ -140,7 +140,7 @@ There are examples (which were also the tests for the framework functionality) t
 3. [Train on PASCAL VOC subset with ImageNet weights](./scripts/pascal_voc)
 4. [Train on PASCAL VOC subset without ImageNet weights](./scripts/pascal_voc_alone)
 5. [Optimize hyperparameters for PASCAL VOC training](./scripts/hopt_tests)
-6. [Measure speed, of training](./scripts/measure_speed)
+6. [Measure speed, of training](./scripts/measure_speeds)
 7. [Create an Application with PASCAL VOC weights](./scripts/application)
 8. [Train on KITTI and export model and weights to Caffee](./scripts/kitti_caffee)
 9. [Implement and train your own SqueezeDet like model](./scripts/new_model)
