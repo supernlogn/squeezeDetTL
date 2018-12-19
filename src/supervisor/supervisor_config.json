@@ -1,9 +1,7 @@
 {
-    "MAX_STEPS"         : 35000,
     "SUMMARY_STEP"      : 2000,
     "checkpoint_step"   : 2000,
     "GPU"               : 0,
     "EVAL_PER_STEPS"    : 2000,
-    "SAVE_XLA_TIMELINE" : false,
     "VISUALIZE_ON"      : true
 }

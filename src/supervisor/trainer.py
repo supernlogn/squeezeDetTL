@@ -4,6 +4,7 @@ from __future__ import print_function
 
 import sys
 import json
+import time
 import os.path
 from six.moves import xrange
 from easydict import EasyDict as edict
@@ -103,6 +104,10 @@ def train(mc):
   
   # get current step
   g_s = train_sess.run(global_step, options=run_options)
+  # create an array of times of each step
+  if mc.TIMING:
+    times = np.zeros((mc["MAX_STEPS"],))  
+
   # run the whole thing
   for i in xrange(mc["MAX_STEPS"]):
     train_sess.run(model.train_op,
@@ -117,7 +122,13 @@ def train(mc):
       with open(os.path.join(mc.TRAIN_DIR,'timeline_02_step_%d.json' % i), 'w') as f:
         f.write(chrome_trace)
       break
-
+    if mc.TIMING:
+      times[i] = time.time()
+  
+  if mc.TIMING:
+    times -= times[0]
+    with open(os.path.join(mc.TRAIN_DIR, 'step_times.json'), 'w') as f:
+      json.dump({"TIMES": times, "MAX_STEPS": list(np.arange(mc["MAX_STEPS"]))}, f)
   return True
 
 
