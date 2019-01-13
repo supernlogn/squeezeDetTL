@@ -2,6 +2,15 @@ import sys
 import json
 import os
 
+# full path to your trainings folder, where you put directories for each training
+TRAININGS_FOLDER = "/mnt/terabyte/sniper_trainings"
+
+# full path to your datasets folder, where you keep all your datasets organised
+DATASETS_FOLDER = "/mnt/terabyte/datasets/"
+
+# full path to the SqueezeNet weights pretrained in ImageNet classification.
+PRETRAINED_WEIGHTS_FOLDER = "/mnt/terabyte/sniper_data/SqueezeNet_imageNet_trained/"
+
 # The currect directory, this file is in
 BASE_PATH = os.path.dirname(__file__)
 
@@ -11,16 +20,17 @@ EXTENSIONS = [".py", ".pyx", ".json", ".c", ".cpp", ".h", ".sh"]
 # Directories that contain source code files
 DIRECTORIES = [".", "src", "scripts"]
 
+
 # Map to replace all strings inside the directory on the left with those on the right.
 REPLACEMENT_MAP = {
-  # full path to your trainings folder, where you put directories for each training
-  "/media/terabyte/projects/Thesis/trainings":  "/mnt/terabyte/sniper_trainings",
-  # specify if you want GPU which GPU or if you want CPU and which CPU
+
+  "/media/terabyte/projects/Thesis/trainings":  TRAININGS_FOLDER,
+  # specify: whether you want GPU (then which GPU) or CPU (then which CPU)
   "tf.device('/job:localhost/replica:0/task:0/device:CPU:0')": "tf.device('/GPU:{}'.format(gpu_id))",
-  # full path to your datasets folder, where you keep all your datasets organised
-  "/media/terabyte/projects/datasets/" : "/mnt/terabyte/datasets/",
-  # full path to the SqueezeNet weights trained in ImageNet.
-  "/media/terabyte/projects/Thesis/SqueezeNet_imageNet_trained/" : "/mnt/terabyte/sniper_data/SqueezeNet_imageNet_trained/",
+  
+  "/media/terabyte/projects/datasets/" : DATASETS_FOLDER,
+  
+  "/media/terabyte/projects/Thesis/SqueezeNet_imageNet_trained/" : PRETRAINED_WEIGHTS_FOLDER,
   # full path to this folder
   "/media/terabyte/projects/Thesis/transfer_learning/auto_ITL/"  : BASE_PATH
 }
