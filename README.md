@@ -132,6 +132,27 @@ From a terminal:
 9. Wait...
 10. Get your weights in your specified `BASE_DIR` folder.
 
+Step `4` has to be explained a little further. The framework tries to be independent and concurrently to avoid installations. Independence makes easy to use other frameworks for the results and puts away frustrations about "where to store what" after running the [make_user_compatible.py](./make_user_compatible.py) script. Avoiding installations allows the user to add functionality to the same framework without reinstalling it for testing. The only thing the user has to remember is where the framework repository is stored after.
+
+So, there are three folder paths inside [make_user_compatible.py](./make_user_compatible.py) which should be changed. These are: 
+1. The `TRAININGS_FOLDER` where the training folders are. This folder indicates that the framework will create folders for each training with path prefix the `TRAININGS_FOLDER` constant. Inside each of these folders, the framework will output post-training data.
+2. The `DATASETS_FOLDER` where the dataset folders are. It is common not to copy paste datasets for each training running on a machine. So all datasets usually are stored in a folder. The path of this folder is indicated in the `DATASETS_FOLDER`. For example in my case `DATASETS_FOLDER = "/mnt/terabyte/datasets/"` and in `"/mnt/terabyte/datasets/"` one can find: a folder named pascal_voc which holds the pascal voc dataset, a folder names kitti which holds the kitti dataset, etc.
+3. The `PRETRAINED_WEIGHTS_FOLDER`, which is the path for the CNN model weights pretrained for ImageNet classification. These weights can be download with this scripts:
+
+```bash
+PRETRAINED_WEIGHTS_FOLDER = ...
+cd $PRETRAINED_WEIGHTS_FOLDER
+# SqueezeNet
+wget https://www.dropbox.com/s/fzvtkc42hu3xw47/SqueezeNet.tgz
+tar -xzvf SqueezeNet.tgz
+# ResNet50 
+wget https://www.dropbox.com/s/p65lktictdq011t/ResNet.tgz
+tar -xzvf ResNet.tgz
+# VGG16
+wget https://www.dropbox.com/s/zxd72nj012lzrlf/VGG16.tgz
+tar -xzvf VGG16.tgz
+```
+
 ## Examples & Tests
 There are examples (which were also the tests for the framework functionality) that show what this framework is able of. To mention the we provide a list with short descriptions and links to each example.
 
