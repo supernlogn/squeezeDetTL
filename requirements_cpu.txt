@@ -1,0 +1,7 @@
+easydict
+joblib
+numpy
+tensorflow>=1.0.0
+lxml
+google
+logging

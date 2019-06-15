@@ -1,0 +1,7 @@
+easydict
+joblib
+numpy
+tensorflow-gpu>=1.0.0
+lxml
+google
+logging
